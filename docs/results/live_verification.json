@@ -1,0 +1,175 @@
+{
+  "executed_at": "2026-09-15T04:48:39.947262+00:00",
+  "runs": [
+    {
+      "symbol": "AAPL",
+      "status": 200,
+      "analysis_id": "04a8d99e-3d14-4a1b-9296-3b3b294aead0",
+      "company": {
+        "symbol": "AAPL",
+        "name": "Apple Inc.",
+        "exchange": "NMS",
+        "currency": "USD",
+        "sector": "Technology",
+        "industry": "Consumer Electronics",
+        "market_cap": 4861029515264.0,
+        "trailing_pe": 38.2411,
+        "forward_pe": 34.757923,
+        "price_to_book": 45.255432,
+        "revenue_growth": 0.164,
+        "return_on_equity": 1.4875101,
+        "latest_close": 333.0799865722656,
+        "adjusted_close": 333.0799865722656,
+        "daily_change": 0.0024377692400032736
+      },
+      "quality": {
+        "rows": 500,
+        "start": "2024-09-16",
+        "end": "2026-09-14",
+        "stale_days": 1,
+        "possible_missing_weekdays": 21,
+        "warnings": [
+          "21 absent weekdays may be holidays or missing sessions; no exchange calendar applied."
+        ],
+        "handling": "No price filling, sorting, deduplication or repair. A trailing all-null OHLC/adjusted-close row with zero volume may be excluded and is explicitly reported. Other invalid data is rejected."
+      },
+      "returns": {
+        "total_return": 0.5526361105561144,
+        "annualized_return": 0.24879774038963112,
+        "annualized_volatility": 0.2896759193908876,
+        "observations": 499
+      },
+      "risk": {
+        "downside_deviation": 0.19465105458373463,
+        "maximum_drawdown": -0.3336050977788301,
+        "sharpe": 0.9110014521101987,
+        "sortino": 1.3557346697699677,
+        "historical_var_95": 0.02662631652682696,
+        "expected_shortfall_95": 0.042422638537649625,
+        "normal_var_95": 0.028967868266910793,
+        "annual_risk_free": 0.0,
+        "level": "Moderate",
+        "assumptions": [
+          "252 sessions/year; sample standard deviation; risk-free rate is user supplied (default zero).",
+          "Daily VaR/ES are positive loss fractions floored at zero; linear quantile and tail ties included.",
+          "Normal VaR is a comparison under a Gaussian assumption, not a validated tail model.",
+          "Risk labels use annual volatility cutoffs 20%/40%, not suitability or loss probabilities.",
+          "Square-root time scaling ignores serial dependence; ratios are descriptive, not guarantees."
+        ]
+      },
+      "models": {
+        "naive": {
+          "validation": {
+            "mae": 9.585219573974609,
+            "rmse": 12.580271379102559,
+            "mape": 0.04267519027148778,
+            "directional_accuracy": 0.0
+          },
+          "holdout": {
+            "mae": 14.189605034722222,
+            "rmse": 17.410946911407425,
+            "mape": 0.04941458252733158,
+            "directional_accuracy": 0.0
+          }
+        },
+        "moving_average": {
+          "validation": {
+            "mae": 13.565247361924918,
+            "rmse": 16.302107288955437,
+            "mape": 0.057768392756825576,
+            "directional_accuracy": 0.5333333333333333
+          },
+          "holdout": {
+            "mae": 15.175306718614365,
+            "rmse": 18.91732680853602,
+            "mape": 0.05214612960827309,
+            "directional_accuracy": 0.6166666666666667
+          }
+        },
+        "ridge_lags": {
+          "validation": {
+            "mae": 10.240553288688961,
+            "rmse": 14.729775781054729,
+            "mape": 0.046400287080433325,
+            "directional_accuracy": 0.5388888888888889
+          },
+          "holdout": {
+            "mae": 13.504932055615123,
+            "rmse": 16.64275474933363,
+            "mape": 0.04748813491947823,
+            "directional_accuracy": 0.6055555555555555
+          }
+        }
+      },
+      "selected_model": "naive",
+      "selected_beats_naive_holdout": false,
+      "validation_start": "2025-04-08",
+      "holdout_start": "2025-12-24",
+      "holdout_end": "2026-09-14",
+      "recommendation": "BUY",
+      "ai_status": "unconfigured",
+      "ai_message": "Set GEMINI_API_KEY to enable optional interpretation. Quantitative results are complete.",
+      "warnings": [
+        "21 absent weekdays may be holidays or missing sessions; no exchange calendar applied."
+      ],
+      "benchmark": {
+        "symbol": "^GSPC",
+        "observations": 499,
+        "beta": 1.1107117344553592,
+        "correlation": 0.6176343259671655,
+        "asset_return": 0.5526361105561144,
+        "benchmark_return": 0.3527176366489584,
+        "relative_return": 0.199918473907156,
+        "methodology": "Aligned session endpoints before returns; beta=cov(asset,benchmark)/var(benchmark). Relative return is percentage-point difference. Default benchmarks are price indices, whereas adjusted equity prices reflect distributions; comparison is not pure alpha."
+      },
+      "news_items": 6,
+      "provenance": {
+        "source": "Yahoo Finance via yfinance",
+        "fetched_at": "2026-09-15T04:48:44.343961+00:00",
+        "cached": false,
+        "input_sha256": "e3f8160320c6579697cb854027d054a5113932580d65fa18e21861f215c3c200",
+        "versions": {
+          "finquant": "0.1.0",
+          "numpy": "2.5.3",
+          "pandas": "2.3.3",
+          "scipy": "1.18.1",
+          "scikit-learn": "1.9.1",
+          "yfinance": "0.2.66"
+        },
+        "duration_seconds": 4.9897,
+        "assumptions": [
+          "Raw OHLCV displayed; adjusted close used for returns, risk and model outputs.",
+          "Provider-adjusted history is not point-in-time; corporate-action revisions can change results.",
+          "No exchange calendar or currency conversion. Latest daily bar may still be in progress.",
+          "Financial ratios are provider snapshots, not audited valuation estimates.",
+          "The optional AI narrative is unverified interpretation; structured Python output is authoritative."
+        ]
+      },
+      "roundtrip": true
+    },
+    {
+      "symbol": "RELIANCE.NS",
+      "status": 422,
+      "error": {
+        "error": {
+          "code": "invalid_data",
+          "message": "OHLCV contains null or non-finite values; no filling performed."
+        }
+      }
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "service": "FinQuant AI",
+    "version": "0.1.0",
+    "ai_configured": false
+  },
+  "endpoint_statuses": {
+    "/api/models": 200,
+    "/api/methodology": 200,
+    "/openapi.json": 200
+  },
+  "invalid_ticker_status": 422,
+  "empty_input_status": 422,
+  "bad_body_status": 422
+}

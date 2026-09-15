@@ -1,0 +1,24 @@
+         546692 function calls (540142 primitive calls) in 0.354 seconds
+
+   Ordered by: cumulative time
+   List reduced from 1146 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.355    0.355 D:\PythonProject\FinQuant AI\scripts\replay.py:17(replay)
+        1    0.001    0.001    0.224    0.224 D:\PythonProject\FinQuant AI\backend\app\forecasting\validation.py:32(evaluate)
+       37    0.003    0.000    0.221    0.006 D:\PythonProject\FinQuant AI\backend\app\forecasting\models.py:13(predict)
+      360    0.001    0.000    0.172    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\pipeline.py:746(predict)
+      756    0.003    0.000    0.134    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\utils\validation.py:2932(validate_data)
+   1904/5    0.003    0.000    0.106    0.021 D:\PythonProject\FinQuant AI\scripts\replay.py:29(check)
+  384/372    0.001    0.000    0.102    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\utils\_set_output.py:325(wrapped)
+     1625    0.005    0.000    0.102    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\numpy\testing\_private\utils.py:1671(assert_allclose)
+     1625    0.010    0.000    0.096    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\numpy\testing\_private\utils.py:738(assert_array_compare)
+      792    0.009    0.000    0.094    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\utils\validation.py:733(check_array)
+      372    0.003    0.000    0.081    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\preprocessing\_data.py:1092(transform)
+      360    0.000    0.000    0.064    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\linear_model\_ridge.py:1265(predict)
+      360    0.000    0.000    0.064    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\linear_model\_base.py:301(predict)
+      360    0.002    0.000    0.063    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\linear_model\_base.py:291(_decision_function)
+     1548    0.002    0.000    0.051    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\narwhals\stable\v2\dependencies.py:58(is_into_dataframe)
+     1548    0.003    0.000    0.048    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\narwhals\dependencies.py:605(_is_native_dataframe)
+     1625    0.002    0.000    0.044    0.000 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\numpy\testing\_private\utils.py:1770(compare)
+    36/12    0.000    0.000    0.043    0.004 D:\PythonProject\FinQuant AI\.venv\Lib\site-packages\sklearn\base.py:1381(wrapper)

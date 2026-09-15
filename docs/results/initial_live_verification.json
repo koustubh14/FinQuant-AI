@@ -1,0 +1,242 @@
+{
+  "executed_at": "2026-09-14T18:48:04.274549+00:00",
+  "runs": [
+    {
+      "symbol": "AAPL",
+      "status": 200,
+      "analysis_id": "6986635b-bff0-4662-81ed-e2fbe50bec81",
+      "quality": {
+        "rows": 500,
+        "start": "2024-09-16",
+        "end": "2026-09-14",
+        "stale_days": 0,
+        "possible_missing_weekdays": 21,
+        "warnings": [
+          "21 absent weekdays may be holidays or missing sessions; no exchange calendar applied."
+        ],
+        "handling": "No price filling, sorting, deduplication or repair. A trailing all-null OHLC/adjusted-close row with zero volume may be excluded and is explicitly reported. Other invalid data is rejected."
+      },
+      "returns": {
+        "total_return": 0.559674947423886,
+        "annualized_return": 0.25165360002741133,
+        "annualized_volatility": 0.2897049036973618,
+        "observations": 499
+      },
+      "risk": {
+        "downside_deviation": 0.19465105354142198,
+        "maximum_drawdown": -0.33360517686285607,
+        "sharpe": 0.9188322195181644,
+        "sortino": 1.3675250908051078,
+        "historical_var_95": 0.02662632438216465,
+        "expected_shortfall_95": 0.04242262264477261,
+        "normal_var_95": 0.028961764297755353,
+        "annual_risk_free": 0.0,
+        "level": "Moderate",
+        "assumptions": [
+          "252 sessions/year; sample standard deviation; risk-free rate is user supplied (default zero).",
+          "Daily VaR/ES are positive loss fractions floored at zero; linear quantile and tail ties included.",
+          "Normal VaR is a comparison under a Gaussian assumption, not a validated tail model.",
+          "Risk labels use annual volatility cutoffs 20%/40%, not suitability or loss probabilities.",
+          "Square-root time scaling ignores serial dependence; ratios are descriptive, not guarantees."
+        ]
+      },
+      "models": {
+        "naive": {
+          "validation": {
+            "mae": 9.585219913058811,
+            "rmse": 12.580268155486959,
+            "mape": 0.0426751881219612,
+            "directional_accuracy": 0.0
+          },
+          "holdout": {
+            "mae": 14.197987111409505,
+            "rmse": 17.42307490506446,
+            "mape": 0.04943778939272294,
+            "directional_accuracy": 0.0
+          }
+        },
+        "moving_average": {
+          "validation": {
+            "mae": 13.565248124864375,
+            "rmse": 16.302106818698356,
+            "mape": 0.05776839665097588,
+            "directional_accuracy": 0.5333333333333333
+          },
+          "holdout": {
+            "mae": 15.183695661756733,
+            "rmse": 18.921649888196328,
+            "mape": 0.05217052470761398,
+            "directional_accuracy": 0.6166666666666667
+          }
+        },
+        "ridge_lags": {
+          "validation": {
+            "mae": 10.240546997624925,
+            "rmse": 14.729758182848348,
+            "mape": 0.04640025461013238,
+            "directional_accuracy": 0.5388888888888889
+          },
+          "holdout": {
+            "mae": 13.513314420879027,
+            "rmse": 16.650795368066465,
+            "mape": 0.04751203705857101,
+            "directional_accuracy": 0.6055555555555555
+          }
+        }
+      },
+      "selected_model": "naive",
+      "selected_beats_naive_holdout": false,
+      "validation_start": "2025-04-08",
+      "holdout_start": "2025-12-24",
+      "holdout_end": "2026-09-14",
+      "recommendation": "BUY",
+      "ai_status": "unconfigured",
+      "provenance": {
+        "source": "Yahoo Finance via yfinance",
+        "fetched_at": "2026-09-14T18:48:06.074917+00:00",
+        "cached": false,
+        "input_sha256": "166c20367d07e6a16de4aa7973606948ac0a1ac548da9e9c933b804334ff9c76",
+        "versions": {
+          "finquant": "0.1.0",
+          "numpy": "2.5.3",
+          "pandas": "2.3.3",
+          "scipy": "1.18.1",
+          "scikit-learn": "1.9.1",
+          "yfinance": "0.2.66"
+        },
+        "duration_seconds": 2.1353,
+        "assumptions": [
+          "Raw OHLCV displayed; adjusted close used for returns, risk and model outputs.",
+          "Provider-adjusted history is not point-in-time; corporate-action revisions can change results.",
+          "No exchange calendar or currency conversion. Latest daily bar may still be in progress.",
+          "Financial ratios are provider snapshots, not audited valuation estimates.",
+          "The optional AI narrative is unverified interpretation; structured Python output is authoritative."
+        ]
+      },
+      "roundtrip": true
+    },
+    {
+      "symbol": "RELIANCE.NS",
+      "status": 200,
+      "analysis_id": "dcd63e78-cf0f-4e68-81da-4820e993638b",
+      "quality": {
+        "rows": 498,
+        "start": "2024-09-16",
+        "end": "2026-09-11",
+        "stale_days": 3,
+        "possible_missing_weekdays": 23,
+        "warnings": [
+          "Excluded trailing empty provider placeholder dated 2026-09-14: all prices null and volume zero; no price imputation.",
+          "23 absent weekdays may be holidays or missing sessions; no exchange calendar applied.",
+          "Zero-volume sessions present; may indicate illiquidity or index data."
+        ],
+        "handling": "No price filling, sorting, deduplication or repair. A trailing all-null OHLC/adjusted-close row with zero volume may be excluded and is explicitly reported. Other invalid data is rejected."
+      },
+      "returns": {
+        "total_return": -0.13796188114942654,
+        "annualized_return": -0.07251008441186843,
+        "annualized_volatility": 0.20762467606038595,
+        "observations": 497
+      },
+      "risk": {
+        "downside_deviation": 0.14538592715706183,
+        "maximum_drawdown": -0.2386849777901121,
+        "sharpe": -0.25897671979465003,
+        "sortino": -0.36984293188471634,
+        "historical_var_95": 0.020719826706751765,
+        "expected_shortfall_95": 0.028406279988184933,
+        "normal_var_95": 0.021726619389440986,
+        "annual_risk_free": 0.0,
+        "level": "Moderate",
+        "assumptions": [
+          "252 sessions/year; sample standard deviation; risk-free rate is user supplied (default zero).",
+          "Daily VaR/ES are positive loss fractions floored at zero; linear quantile and tail ties included.",
+          "Normal VaR is a comparison under a Gaussian assumption, not a validated tail model.",
+          "Risk labels use annual volatility cutoffs 20%/40%, not suitability or loss probabilities.",
+          "Square-root time scaling ignores serial dependence; ratios are descriptive, not guarantees."
+        ]
+      },
+      "models": {
+        "naive": {
+          "validation": {
+            "mae": 55.09027099609375,
+            "rmse": 77.14988927572946,
+            "mape": 0.03880010008804106,
+            "directional_accuracy": 0.0
+          },
+          "holdout": {
+            "mae": 54.41002739800347,
+            "rmse": 72.17141461652236,
+            "mape": 0.04010587343164265,
+            "directional_accuracy": 0.005555555555555556
+          }
+        },
+        "moving_average": {
+          "validation": {
+            "mae": 61.86077351888022,
+            "rmse": 77.28761976416493,
+            "mape": 0.042997486239451314,
+            "directional_accuracy": 0.5611111111111111
+          },
+          "holdout": {
+            "mae": 43.19721401638458,
+            "rmse": 58.296462513781215,
+            "mape": 0.03170896031391415,
+            "directional_accuracy": 0.75
+          }
+        },
+        "ridge_lags": {
+          "validation": {
+            "mae": 60.00654715009219,
+            "rmse": 85.61257934948684,
+            "mape": 0.04227578561892978,
+            "directional_accuracy": 0.49444444444444446
+          },
+          "holdout": {
+            "mae": 53.34367999487086,
+            "rmse": 71.33783768775622,
+            "mape": 0.03925584534693699,
+            "directional_accuracy": 0.6333333333333333
+          }
+        }
+      },
+      "selected_model": "naive",
+      "selected_beats_naive_holdout": false,
+      "validation_start": "2025-04-04",
+      "holdout_start": "2025-12-26",
+      "holdout_end": "2026-09-11",
+      "recommendation": "SELL",
+      "ai_status": "unconfigured",
+      "provenance": {
+        "source": "Yahoo Finance via yfinance",
+        "fetched_at": "2026-09-14T18:48:08.474909+00:00",
+        "cached": false,
+        "input_sha256": "9e8ac3784d6e2b309b1f22f2f1c2b8cbd5bfd60c3e267a2b62c60b398170d995",
+        "versions": {
+          "finquant": "0.1.0",
+          "numpy": "2.5.3",
+          "pandas": "2.3.3",
+          "scipy": "1.18.1",
+          "scikit-learn": "1.9.1",
+          "yfinance": "0.2.66"
+        },
+        "duration_seconds": 2.4742,
+        "assumptions": [
+          "Raw OHLCV displayed; adjusted close used for returns, risk and model outputs.",
+          "Provider-adjusted history is not point-in-time; corporate-action revisions can change results.",
+          "No exchange calendar or currency conversion. Latest daily bar may still be in progress.",
+          "Financial ratios are provider snapshots, not audited valuation estimates.",
+          "The optional AI narrative is unverified interpretation; structured Python output is authoritative."
+        ]
+      },
+      "roundtrip": true
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "service": "FinQuant AI",
+    "version": "0.1.0",
+    "ai_configured": false
+  },
+  "invalid_ticker_status": 422
+}
