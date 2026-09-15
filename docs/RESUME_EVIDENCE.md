@@ -12,11 +12,11 @@ These describe the verified implementation, not a claim of unaided personal auth
 | 59 backend tests and 3 frontend display tests passing locally | [Final verification](FINAL_VERIFICATION_REPORT.md) |
 | Real US and Indian equity analyses and strict provider validation | Current AAPL and earlier valid RELIANCE.NS snapshots; the latest Reliance request is rejected for interior missing prices |
 | Optional Gemini explanation isolated from deterministic calculations | Mocked success, missing key, rejected key and network-failure tests; no live Gemini success verified |
-| CI workflow prepared | .github/workflows/ci.yml; remote execution is unverified |
+| Hosted CI checks passed | .github/workflows/ci.yml and docs/results/github_verification.json; both initial GitHub Actions jobs succeeded |
 
 ## Unsafe / unsupported claims
 
-Do not claim production-grade or institutional-grade infrastructure, a profitable trading strategy, market-beating forecasts, high forecasting accuracy, real-time trading, calibrated recommendation probabilities, live Gemini integration success, Docker runtime verification, deployed CI success, or a personal performance improvement without evidence. A BUY/SELL label is a heuristic output, not proof of investment value. Passing tests does not establish model profitability or eliminate bugs.
+Do not claim production-grade or institutional-grade infrastructure, a profitable trading strategy, market-beating forecasts, high forecasting accuracy, real-time trading, calibrated recommendation probabilities, live Gemini integration success, Docker runtime verification, application deployment, or a personal performance improvement without evidence. A BUY/SELL label is a heuristic output, not proof of investment value. Passing tests and hosted CI does not establish model profitability or eliminate bugs.
 
 ## Exactly three resume bullets
 

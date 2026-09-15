@@ -172,9 +172,9 @@ No production authentication, risk governance, transaction-cost model, strategy
 backtest, point-in-time data, exchange-calendar validation, calibrated uncertainty
 or historical risk-free curve is implemented. Price updates during a session can
 change results. The 15-minute per-process cache may retain an invalid provider
-snapshot until expiry. Optional prose can hallucinate. No hosted CI execution,
-Docker runtime, production deployment or live authenticated Gemini success was
-verified.
+snapshot until expiry. Optional prose can hallucinate. Hosted GitHub Actions passed
+both jobs on the initial published commit; Docker runtime, production deployment
+and live authenticated Gemini success remain unverified.
 
 ## 19. Future Work
 

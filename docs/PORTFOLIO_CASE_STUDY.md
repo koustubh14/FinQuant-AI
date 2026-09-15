@@ -30,6 +30,6 @@ The current AAPL request succeeded and its saved result replayed. An earlier Rel
 
 ## Limitations and lessons
 
-The current evidence covers two example equities and a modest test suite, not a broad investment validation. Forecast intervals are not calibrated; recommendation rules have no trading-cost backtest. Weekday forecast dates are not exchange calendars. Provider reliability and data licensing require review. Docker runtime, remote CI and real authenticated Gemini generation remain unverified.
+The current evidence covers two example equities and a modest test suite, not a broad investment validation. Forecast intervals are not calibrated; recommendation rules have no trading-cost backtest. Weekday forecast dates are not exchange calendars. Provider reliability and data licensing require review. The project is published to a private GitHub repository with both initial CI jobs passing. Docker runtime and real authenticated Gemini generation remain unverified.
 
 The project illustrates three practical lessons: validation failures can be correct outcomes, baseline models deserve honest comparison, and separating deterministic calculations from AI text improves reproducibility. The next substantial improvement is broader walk-forward evaluation across market regimes and assets, accompanied by exchange-aware data handling and uncertainty calibration.

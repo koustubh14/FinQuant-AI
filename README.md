@@ -15,6 +15,7 @@ project, not a production trading system.
 - Transparent recommendation votes and signal agreement, not invented probabilities.
 - FastAPI, a React/TypeScript dashboard, SQLite snapshots and offline numerical replay.
 - **59 backend tests and 3 frontend tests passed.** See the [verification report](docs/FINAL_VERIFICATION_REPORT.md).
+- [GitHub Actions passed](https://github.com/koustubh14/FinQuant-AI/actions/runs/34941569637) for the initial published implementation, including backend checks and the frontend production build.
 
 Current verification: AAPL succeeds. A previous RELIANCE.NS run succeeded and is
 saved; the latest live request is rejected because Yahoo now has an **interior**
@@ -198,8 +199,8 @@ Never commit `.env`, downloaded data or the local database.
 
 Docker: `docker compose up --build`, then port 8080.
 **Configuration prepared; runtime not verified in the current environment.**
-The Docker engine is unavailable. CI configuration is provided, but no hosted
-GitHub Actions run or deployment is claimed.
+The Docker engine is unavailable. The initial hosted GitHub Actions run passed
+both jobs. No application deployment is claimed.
 
 ## Tests
 

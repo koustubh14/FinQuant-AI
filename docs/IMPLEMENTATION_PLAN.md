@@ -12,13 +12,13 @@ Updated 2026-09-15. The original conditional plan was written when this director
 | Verify AI isolation | Mocked success/403/network and missing-key cases complete; live credentials unavailable |
 | Verify API and real UI | Complete for current AAPL, earlier valid saved Reliance, current rejected Reliance and invalid input |
 | Capture real screenshots | Complete; [provenance guide](SCREENSHOT_GUIDE.md) |
-| Git ownership, ignores and credential review | Complete for local workspace; no commit/remote/push performed |
-| CI | Configuration prepared, equivalent local checks pass; hosted run unverified |
+| Git ownership, ignores and credential review | Complete; initial commit pushed to new private koustubh14/FinQuant-AI repository at user's request |
+| CI | Equivalent local checks and both initial hosted GitHub Actions jobs passed |
 | Docker | Compose syntax passes; engine unavailable, runtime unverified |
 | Documentation and portfolio evidence | Complete; [evidence](../EVIDENCE.md), [technical report](TECHNICAL_REPORT.md), [resume evidence](RESUME_EVIDENCE.md) |
 
 ## Follow-up requiring external state or human review
 
-A corrected provider history is needed for a fresh valid Reliance run. A real Gemini credential is needed to verify authenticated narrative generation. A running Docker engine is needed for image-build/container-health verification. A configured repository remote and initial push are needed to observe hosted CI.
+A corrected provider history is needed for a fresh valid Reliance run. A real Gemini credential is needed to verify authenticated narrative generation. A running Docker engine is needed for image-build/container-health verification. The requested GitHub publication and first hosted CI verification are complete; a public portfolio release is a separate visibility choice.
 
 Before public claims or professional use, review the AI-assisted code, numerical conventions, signal thresholds and data licensing. Broader temporal evaluation, uncertainty calibration and production controls are future engineering work, not completed capabilities. See [final verification](FINAL_VERIFICATION_REPORT.md) for exact evidence and limitations.

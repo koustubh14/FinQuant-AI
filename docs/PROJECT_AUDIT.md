@@ -17,7 +17,7 @@ The initial 2026-09-14 audit found an empty workspace. The user subsequently aut
 | Backend | FastAPI, Pydantic schemas, five application routes, immutable SQLite snapshots |
 | Frontend | React/TypeScript dashboard, seven sections of chart evidence, responsive layouts and visible error handling |
 | Tests/build | 59 backend tests and three frontend tests passed; TypeScript/Vite production build passed |
-| Infrastructure | Locked dependencies, CI configuration and Docker configuration; hosted CI/container runtime unverified |
+| Infrastructure | Locked dependencies; initial hosted CI passed both jobs; Docker configuration exists but container runtime is unverified |
 | Documentation | README, methodology, architecture, evidence, reports, real screenshots and interview/portfolio material |
 
 ## Findings addressed in this continuation
@@ -35,4 +35,4 @@ Financial formulas and validation-based selection were reviewed and retained. Th
 
 No unused framework or redesign was introduced during completion. The small frontend intentionally has limited automated display coverage, not a full interaction-test suite. Other material gaps include exchange calendars, comprehensive benchmark replay, broader predictive validation, calibrated intervals, strategy backtesting, authentication/retention, deployment verification and licensed data review. See [final verification](FINAL_VERIFICATION_REPORT.md) and [scorecard](PROJECT_SCORECARD.md).
 
-Git status and branch queries work; main has no commits or remote. Source files are untracked pending a user-reviewed initial commit. The small credential-pattern scan found no secrets in reviewed first-party files but is not a complete security audit.
+Git status, branch and log queries work. The user authorized a new GitHub repository; main was committed and pushed to private koustubh14/FinQuant-AI, with the initial hosted workflow passing both jobs. The small credential-pattern scan found no secrets in reviewed first-party files but is not a complete security audit.

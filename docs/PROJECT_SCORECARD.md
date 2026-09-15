@@ -22,4 +22,4 @@ Subjective engineering assessment as of 2026-09-15, on a 0–10 scale. These sco
 
 1. **Investment and statistical validation:** only limited real examples, no broad regimes/universe evaluation, calibrated uncertainty or transaction-cost strategy backtest. More output metrics would not substitute for this evidence.
 2. **Data reliability and reproducibility:** public data can be incomplete/revised, current Reliance is rejected, exchange sessions are approximated, and benchmark history is not retained for complete replay.
-3. **Operational verification:** Docker engine, remote CI and real Gemini credentials were unavailable; authentication, retention, monitoring and load testing are absent. These prevent production-readiness claims.
+3. **Operational verification:** hosted CI now passes, but Docker runtime and real Gemini generation remain unverified; authentication, retention, monitoring and load testing are absent. These prevent production-readiness claims.

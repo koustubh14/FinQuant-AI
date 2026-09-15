@@ -29,7 +29,7 @@ This table links actual implementation to verification. Test counts refer to
 | Optional LLM integration | One bounded Gemini REST call; numerical fields never parsed from prose | [analyst.py](backend/app/ai/analyst.py), [tests](backend/tests/test_api.py) | Mock success/403/network tests and real missing-key behavior; authenticated live generation unverified |
 | Failure handling | Sanitized errors; optional benchmark/AI/save failure isolation | [main.py](backend/app/main.py), [test_api.py](backend/tests/test_api.py) | Pipeline survives optional failures; malformed market history rejected |
 | Persistence / reproducibility | SQLite run JSON, UUID, input hash, versions and numerical replay | [storage.py](backend/app/services/storage.py), [replay](scripts/replay.py) | Real saved runs retrieved and recomputed offline |
-| CI configuration | Backend checks and frontend tests/build workflow | [ci.yml](.github/workflows/ci.yml) | Equivalent local checks pass; hosted CI has not run |
+| Hosted CI | Backend checks and frontend tests/build workflow | [ci.yml](.github/workflows/ci.yml), [recorded result](docs/results/github_verification.json) | Both jobs passed in [GitHub Actions](https://github.com/koustubh14/FinQuant-AI/actions/runs/34941569637) on initial commit f6bca02 |
 
 Dockerfiles exist but **runtime verification is not claimed**, so Docker operation
 is not listed as a verified capability. No live authenticated Gemini success,
