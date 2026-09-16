@@ -88,6 +88,7 @@ class Provenance(BaseModel):
 
 class AnalysisResult(BaseModel):
     analysis_id: str
+    snapshot_saved: bool = False
     generated_at: str
     parameters: AnalyzeRequest
     company: Company

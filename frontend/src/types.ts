@@ -5,6 +5,7 @@ export interface HistoryPoint {
   moving_average: number | null; rolling_return: number | null; rolling_volatility: number | null; drawdown: number;
 }
 export interface Analysis {
+  snapshot_saved: boolean;
   analysis_id: string; generated_at: string;
   parameters: {symbol: string; period: string; forecast_horizon: number; annual_risk_free: number};
   company: {symbol: string; name: string; exchange: string | null; currency: string | null; sector: string | null;

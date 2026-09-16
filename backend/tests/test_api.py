@@ -38,6 +38,7 @@ def test_api_pipeline_and_roundtrip(client, symbol):
     assert response.status_code == 200, response.text
     result = response.json()
     assert result["company"]["symbol"] == symbol
+    assert result["snapshot_saved"] is True
     assert result["interpretation"]["status"] == "disabled"
     assert len(result["forecast"]["predictions"]) == 30
     assert result["recommendation"]["action"] in ["BUY", "HOLD", "SELL"]
@@ -96,6 +97,7 @@ def test_persistence_failure_preserves_result(client):
     response = client.post("/api/analyze", json={"symbol": "AAPL"})
     assert response.status_code == 200
     assert any("Persistence unavailable" in w for w in response.json()["warnings"])
+    assert response.json()["snapshot_saved"] is False
     assert "private disk" not in response.text
 
 
@@ -166,3 +168,24 @@ def test_invalid_benchmark_is_optional_and_warning_is_persisted(client, history)
     assert any("benchmark data failed quality validation" in w for w in result["warnings"])
     saved = client.get("/api/analysis/" + result["analysis_id"]).json()
     assert saved["warnings"] == result["warnings"]
+
+
+def test_serverless_analysis_without_disk_or_llm(client, monkeypatch):
+    monkeypatch.setattr("app.main.settings.persistence_enabled", False)
+    monkeypatch.setattr("app.main.settings.gemini_api_key", "")
+    app.dependency_overrides.pop(store)
+    store.cache_clear()
+    try:
+        response = client.post("/api/analyze", json={"symbol": "AAPL", "include_ai": True})
+        assert response.status_code == 200
+        result = response.json()
+        assert result["snapshot_saved"] is False
+        assert all(result[key] for key in ["returns", "risk", "forecast", "recommendation"])
+        assert result["interpretation"]["status"] == "unconfigured"
+        assert any("Saved analyses are disabled" in warning for warning in result["warnings"])
+        assert client.get("/api/health").json()["persistence_enabled"] is False
+        saved = client.get("/api/analysis/" + result["analysis_id"])
+        assert saved.status_code == 503
+        assert saved.json()["error"]["code"] == "persistence_disabled"
+    finally:
+        store.cache_clear()

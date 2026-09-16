@@ -22,7 +22,7 @@ export default function App() {
     try {
       const data = await analyze(symbol,period,horizon,ai,rf/100)
       setResult(data)
-      history.replaceState(null,'',`?analysis=${data.analysis_id}`)
+      history.replaceState(null,'',data.snapshot_saved ? `?analysis=${data.analysis_id}` : location.pathname)
     } catch(e) {setError(e instanceof Error ? e.message : 'Unable to complete analysis.')}
     finally {setLoading(false)}
   }

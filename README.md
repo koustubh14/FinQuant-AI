@@ -8,18 +8,21 @@ project, not a production trading system.
 
 ## Demo
 
+**[Live application on Vercel](https://finquant-ai.vercel.app)** · [Deployment details and serverless limitations](docs/VERCEL_DEPLOYMENT.md)
+
 ![Real AAPL dashboard](docs/screenshots/aapl-dashboard.png)
 
 - Adjusted-price returns, risk, distribution diagnostics and benchmark comparison.
 - Three forecast candidates, validation-based selection and separate walk-forward holdout.
 - Transparent recommendation votes and signal agreement, not invented probabilities.
 - FastAPI, a React/TypeScript dashboard, SQLite snapshots and offline numerical replay.
-- **59 backend tests and 3 frontend tests passed.** See the [verification report](docs/FINAL_VERIFICATION_REPORT.md).
+- **63 backend tests and 3 frontend tests passed.** See the [deployment verification](docs/VERCEL_DEPLOYMENT.md) and [earlier verification report](docs/FINAL_VERIFICATION_REPORT.md).
 - [GitHub Actions passed](https://github.com/koustubh14/FinQuant-AI/actions/runs/34941569637) for the initial published implementation, including backend checks and the frontend production build.
 
-Current verification: AAPL succeeds. A previous RELIANCE.NS run succeeded and is
-saved; the latest live request is rejected because Yahoo now has an **interior**
-missing-price row. The application does not silently repair it.
+Vercel verification on September 16: **AAPL and RELIANCE.NS both succeed**.
+Reliance's invalid benchmark is omitted with a warning. The earlier September 15
+stock-data rejection remains documented as historical evidence; provider data can
+change. Hosted saved runs are disabled; download the JSON before leaving the page.
 [More screenshots and their provenance](docs/SCREENSHOT_GUIDE.md).
 
 ## What It Does
@@ -199,8 +202,9 @@ Never commit `.env`, downloaded data or the local database.
 
 Docker: `docker compose up --build`, then port 8080.
 **Configuration prepared; runtime not verified in the current environment.**
-The Docker engine is unavailable. The initial hosted GitHub Actions run passed
-both jobs. No application deployment is claimed.
+The Docker engine is unavailable. GitHub Actions passed both initial jobs. The
+application is now deployed to Vercel; see [configuration, environment variables
+and verification](docs/VERCEL_DEPLOYMENT.md).
 
 ## Tests
 

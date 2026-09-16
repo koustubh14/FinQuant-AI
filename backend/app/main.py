@@ -41,6 +41,8 @@ def provider():
 
 @lru_cache
 def store():
+    if not settings.persistence_enabled:
+        return None
     return AnalysisStore(settings.data_dir / "analyses.sqlite3")
 
 
@@ -90,6 +92,7 @@ def health():
         "service": "FinQuant AI",
         "version": __version__,
         "ai_configured": bool(settings.gemini_api_key),
+        "persistence_enabled": settings.persistence_enabled,
     }
 
 
@@ -118,12 +121,20 @@ def run_analysis(request: AnalyzeRequest, market=Depends(provider), database=Dep
     try:
         result = analyze(request, market, settings)
         json.dumps(result.model_dump(mode="json"), allow_nan=False)
-        try:
-            database.save(result)
-        except Exception:
+        if database is None:
             result.warnings.append(
-                "Persistence unavailable. Download this result now; retrieval by ID is unavailable."
+                "Saved analyses are disabled on this deployment. Download the run JSON to keep it; "
+                "reloading this page will not restore the result."
             )
+        else:
+            try:
+                result.snapshot_saved = True
+                database.save(result)
+            except Exception:
+                result.snapshot_saved = False
+                result.warnings.append(
+                    "Persistence unavailable. Download this result now; retrieval by ID is unavailable."
+                )
         return result
     except (ValueError, ArithmeticError) as exc:
         raise AnalysisError(
@@ -136,6 +147,12 @@ def run_analysis(request: AnalyzeRequest, market=Depends(provider), database=Dep
 
 @app.get("/api/analysis/{analysis_id}", response_model=AnalysisResult)
 def saved_analysis(analysis_id: UUID, database=Depends(store)):
+    if database is None:
+        raise AnalysisError(
+            "Saved analyses are disabled on this deployment. Run a new analysis or use your downloaded JSON.",
+            "persistence_disabled",
+            503,
+        )
     result = database.get(str(analysis_id))
     if result is None:
         raise AnalysisError("Analysis ID not found.", "not_found", 404)

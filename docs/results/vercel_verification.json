@@ -1,0 +1,254 @@
+{
+  "verified_at": "2026-09-16T17:40:04.090253+00:00",
+  "url": "https://finquant-ai.vercel.app",
+  "deployment_id": "dpl_Auz55yUUz6H1Fs12dZzMYmZkr4od",
+  "endpoints": {
+    "/": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    "/api/health": {
+      "status": 200,
+      "content_type": "application/json"
+    },
+    "/api/models": {
+      "status": 200,
+      "content_type": "application/json"
+    },
+    "/api/methodology": {
+      "status": 200,
+      "content_type": "application/json"
+    },
+    "/openapi.json": {
+      "status": 200,
+      "content_type": "application/json"
+    },
+    "/docs": {
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    }
+  },
+  "runs": [
+    {
+      "symbol": "AAPL",
+      "status": 200,
+      "seconds": 2.3,
+      "analysis_id": "d041fea1-2be6-4258-8977-468eb3beae0a",
+      "snapshot_saved": false,
+      "history_rows": 502,
+      "quality": {
+        "rows": 502,
+        "start": "2024-09-16",
+        "end": "2026-09-16",
+        "stale_days": 0,
+        "possible_missing_weekdays": 21,
+        "warnings": [
+          "21 absent weekdays may be holidays or missing sessions; no exchange calendar applied."
+        ],
+        "handling": "No price filling, sorting, deduplication or repair. A trailing all-null OHLC/adjusted-close row with zero volume may be excluded and is explicitly reported. Other invalid data is rejected."
+      },
+      "returns": {
+        "total_return": 0.5535456649553245,
+        "annualized_return": 0.24805820030822268,
+        "annualized_volatility": 0.2891502491634074,
+        "observations": 501
+      },
+      "risk": {
+        "downside_deviation": 0.19429747320483068,
+        "maximum_drawdown": -0.3336051175256479,
+        "sharpe": 0.9100863913129438,
+        "sortino": 1.354375342446921,
+        "historical_var_95": 0.026580402911988155,
+        "expected_shortfall_95": 0.04181332368414482,
+        "normal_var_95": 0.028916350703260867,
+        "annual_risk_free": 0.0,
+        "level": "Moderate",
+        "assumptions": [
+          "252 sessions/year; sample standard deviation; risk-free rate is user supplied (default zero).",
+          "Daily VaR/ES are positive loss fractions floored at zero; linear quantile and tail ties included.",
+          "Normal VaR is a comparison under a Gaussian assumption, not a validated tail model.",
+          "Risk labels use annual volatility cutoffs 20%/40%, not suitability or loss probabilities.",
+          "Square-root time scaling ignores serial dependence; ratios are descriptive, not guarantees."
+        ]
+      },
+      "statistics_present": true,
+      "selected_model": "ridge_lags",
+      "forecast_points": 30,
+      "recommendation": "BUY",
+      "interpretation": {
+        "status": "unconfigured",
+        "text": "Set GEMINI_API_KEY to enable optional interpretation. Quantitative results are complete.",
+        "model": null
+      },
+      "benchmark_available": true,
+      "warnings": [
+        "21 absent weekdays may be holidays or missing sessions; no exchange calendar applied.",
+        "Saved analyses are disabled on this deployment. Download the run JSON to keep it; reloading this page will not restore the result."
+      ],
+      "input_sha256": "91a900c6d8fef2e356dcc8c61d94df2e80131e540302f3af25fa7e6848821f73",
+      "fetched_at": "2026-09-16T17:40:05.129528+00:00",
+      "retrieval": {
+        "status": 503,
+        "body": {
+          "error": {
+            "code": "persistence_disabled",
+            "message": "Saved analyses are disabled on this deployment. Run a new analysis or use your downloaded JSON."
+          }
+        }
+      }
+    },
+    {
+      "symbol": "RELIANCE.NS",
+      "status": 200,
+      "seconds": 1.099,
+      "analysis_id": "22dd3321-da72-4827-9a47-dd84318acb5f",
+      "snapshot_saved": false,
+      "history_rows": 501,
+      "quality": {
+        "rows": 501,
+        "start": "2024-09-16",
+        "end": "2026-09-16",
+        "stale_days": 0,
+        "possible_missing_weekdays": 23,
+        "warnings": [
+          "23 absent weekdays may be holidays or missing sessions; no exchange calendar applied.",
+          "Zero-volume sessions present; may indicate illiquidity or index data."
+        ],
+        "handling": "No price filling, sorting, deduplication or repair. A trailing all-null OHLC/adjusted-close row with zero volume may be excluded and is explicitly reported. Other invalid data is rejected."
+      },
+      "returns": {
+        "total_return": -0.14995843548730725,
+        "annualized_return": -0.07862199289032051,
+        "annualized_volatility": 0.20738961441609208,
+        "observations": 500
+      },
+      "risk": {
+        "downside_deviation": 0.14548994664471593,
+        "maximum_drawdown": -0.2386849777901121,
+        "sharpe": -0.2913713958810386,
+        "sortino": -0.4153372988115106,
+        "historical_var_95": 0.020711422713182628,
+        "expected_shortfall_95": 0.028406279988184933,
+        "normal_var_95": 0.021728681661058496,
+        "annual_risk_free": 0.0,
+        "level": "Moderate",
+        "assumptions": [
+          "252 sessions/year; sample standard deviation; risk-free rate is user supplied (default zero).",
+          "Daily VaR/ES are positive loss fractions floored at zero; linear quantile and tail ties included.",
+          "Normal VaR is a comparison under a Gaussian assumption, not a validated tail model.",
+          "Risk labels use annual volatility cutoffs 20%/40%, not suitability or loss probabilities.",
+          "Square-root time scaling ignores serial dependence; ratios are descriptive, not guarantees."
+        ]
+      },
+      "statistics_present": true,
+      "selected_model": "moving_average",
+      "forecast_points": 30,
+      "recommendation": "HOLD",
+      "interpretation": {
+        "status": "unconfigured",
+        "text": "Set GEMINI_API_KEY to enable optional interpretation. Quantitative results are complete.",
+        "model": null
+      },
+      "benchmark_available": false,
+      "warnings": [
+        "23 absent weekdays may be holidays or missing sessions; no exchange calendar applied.",
+        "Zero-volume sessions present; may indicate illiquidity or index data.",
+        "Benchmark analysis unavailable because benchmark data failed quality validation. Relative signals omitted.",
+        "Saved analyses are disabled on this deployment. Download the run JSON to keep it; reloading this page will not restore the result."
+      ],
+      "input_sha256": "2fec6f82186f61125b8746787c249236be8f3f4775f279dee4463fdc6267f7d6",
+      "fetched_at": "2026-09-16T17:38:44.448675+00:00",
+      "retrieval": {
+        "status": 503,
+        "body": {
+          "error": {
+            "code": "persistence_disabled",
+            "message": "Saved analyses are disabled on this deployment. Run a new analysis or use your downloaded JSON."
+          }
+        }
+      }
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "service": "FinQuant AI",
+    "version": "0.1.0",
+    "ai_configured": false,
+    "persistence_enabled": false
+  },
+  "invalid_ticker": {
+    "status": 422,
+    "body": {
+      "error": {
+        "code": "invalid_ticker",
+        "message": "Enter a valid company name or exchange-qualified ticker."
+      }
+    }
+  },
+  "empty_input": {
+    "status": 422,
+    "body": {
+      "detail": [
+        {
+          "type": "string_too_short",
+          "loc": [
+            "body",
+            "symbol"
+          ],
+          "msg": "String should have at least 1 character",
+          "input": "",
+          "ctx": {
+            "min_length": 1
+          }
+        }
+      ]
+    }
+  },
+  "invalid_horizon": {
+    "status": 422,
+    "body": {
+      "detail": [
+        {
+          "type": "greater_than_equal",
+          "loc": [
+            "body",
+            "forecast_horizon"
+          ],
+          "msg": "Input should be greater than or equal to 1",
+          "input": 0,
+          "ctx": {
+            "ge": 1
+          }
+        }
+      ]
+    }
+  },
+  "browser": {
+    "entry_url": "https://finquant-ai.vercel.app/",
+    "aapl_charts": 7,
+    "reliance_charts": 6,
+    "local_resource_requests": 0,
+    "javascript_errors_observed": 0,
+    "mobile_width": 390,
+    "mobile_horizontal_overflow": false,
+    "mobile_invalid_numbers": false,
+    "invalid_ticker_alert": true,
+    "loading_cleared_after_error": true,
+    "saved_run_url_added": false,
+    "persistence_warning_verified": true,
+    "screenshots": [
+      "docs/screenshots/vercel-aapl.png",
+      "docs/screenshots/vercel-mobile.png"
+    ]
+  },
+  "runtime_log_scan": {
+    "entries": 16,
+    "status_counts": {
+      "200": 10,
+      "422": 4,
+      "503": 2
+    },
+    "unexpected_server_errors": 0,
+    "expected_503": "Two disabled snapshot retrieval requests"
+  }
+}
